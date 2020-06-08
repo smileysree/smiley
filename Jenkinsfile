@@ -2,9 +2,20 @@ pipeline {
   agent any
   stages {
     stage('build') {
-      steps {
-        cleanWs(cleanWhenFailure: true)
-        bat 'mvn clean install'
+      parallel {
+        stage('build') {
+          steps {
+            cleanWs(cleanWhenFailure: true)
+            bat 'mvn clean install'
+          }
+        }
+
+        stage('wipeout workspace') {
+          steps {
+            cleanWs(cleanWhenFailure: true, deleteDirs: true)
+          }
+        }
+
       }
     }
 
