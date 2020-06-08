@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'hello krishhhh'
-        bat 'pom.xml'
+        bat 'mvn clean install'
       }
     }
 
