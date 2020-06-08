@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'hello krishhhh'
+        cleanWs(cleanWhenFailure: true)
         bat 'mvn clean install'
       }
     }
