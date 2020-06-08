@@ -4,6 +4,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'hello krishhhh'
+        bat 'master/pom.xml'
       }
     }
 
