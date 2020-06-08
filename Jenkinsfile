@@ -9,7 +9,7 @@ pipeline {
 
     stage('testing') {
       steps {
-        junit 'target/**/*.xml'
+        echo 'testing code'
       }
     }
 
