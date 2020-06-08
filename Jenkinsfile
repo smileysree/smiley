@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('Package') {
+      steps {
+        echo 'packaging a jar'
+      }
+    }
+
   }
 }
